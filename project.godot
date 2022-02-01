@@ -21,6 +21,11 @@ window/size/height=1080
 window/size/resizable=false
 window/stretch/mode="viewport"
 
+[global]
+
+default_clear_color=false
+layer=false
+
 [input]
 
 ui_left={
@@ -48,6 +53,13 @@ ui_down={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="obstacles"
+2d_physics/layer_2="player"
+2d_physics/layer_3="enemies"
+2d_physics/layer_4="lights"
+
 [physics]
 
 common/enable_pause_aware_picking=true
@@ -55,4 +67,5 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 2d/snapping/use_gpu_pixel_snap=true
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"
