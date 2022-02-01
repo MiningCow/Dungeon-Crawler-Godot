@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-onready var player = $"../.."
+onready var player = $"../../"
 const MAX_SPEED = 50
 const ACCELERATION = 200
 const DECELERATION = 10
