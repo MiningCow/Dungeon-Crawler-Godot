@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Squirrel_Sprite.png-fb878119fa7d78d7299151e6518d784b.stex"
+path="res://.import/tempTileset.png-0cace5c3c7a76e0d6ccf09d8c6c90fb2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Squirrel_Sprite.png"
-dest_files=[ "res://.import/Squirrel_Sprite.png-fb878119fa7d78d7299151e6518d784b.stex" ]
+source_file="res://Assets/Tilesets/tempTileset.png"
+dest_files=[ "res://.import/tempTileset.png-0cace5c3c7a76e0d6ccf09d8c6c90fb2.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

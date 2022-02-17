@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tempTileset.png-b98d71e5fff086538e941bd47f3c3f81.stex"
+path="res://.import/obstacleTileset.png-583a467324a082662c4daf7776cdba59.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tempTileset.png"
-dest_files=[ "res://.import/tempTileset.png-b98d71e5fff086538e941bd47f3c3f81.stex" ]
+source_file="res://Assets/Tilesets/obstacleTileset.png"
+dest_files=[ "res://.import/obstacleTileset.png-583a467324a082662c4daf7776cdba59.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
