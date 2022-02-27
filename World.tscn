@@ -78,5 +78,4 @@ tile_data = PoolIntArray( -1638402, 0, 0, -1638401, 0, 0, -1703936, 0, 0, -15728
 position = Vector2( -24.0543, -24.9452 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color( 0, 0, 0, 1 )

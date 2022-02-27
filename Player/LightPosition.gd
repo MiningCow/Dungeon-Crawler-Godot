@@ -22,4 +22,4 @@ func move_back(deceleration):
 func move_away_from_player(acceleration):
 	move_and_collide(acceleration)
 	position = position.clamped(MAX_SPEED)
-	
+
