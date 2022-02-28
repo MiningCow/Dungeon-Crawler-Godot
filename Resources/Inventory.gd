@@ -15,7 +15,10 @@ func get_items():
 	return _items
 
 func get_item(index: int):
-	return _items[index]
+	if _items:
+		return _items[index]
+	else:
+		return null
 
 func add_item(new_item_id: String, quantity: int):
 	if quantity < 1:
@@ -31,14 +34,16 @@ func add_item(new_item_id: String, quantity: int):
 	for i in quantity:
 		_items.append(new_item)
 
-func place_item(placePosition: Vector2, item: Item) -> void : # not sure if it should be a void or what should be returned if it fails to place the item
-	pass
+func remove_item(index: int) -> void :
+	_items.erase(_items[index])
 
-func can_place(placePosition: Vector2, item: Item) -> bool :
-	return true
+#func place_item(placePosition: Vector2, item: Item) -> void : # not sure if it should be a void or what should be returned if it fails to place the item
+#	pass
 
-func set_shape(shape: Array) -> void :
-	pass
+#func can_place(placePosition: Vector2, item: Item) -> bool :
+#	return true
 
-func remove() -> void :
-	pass
+#func set_shape(shape: Array) -> void :
+#	pass
+
+

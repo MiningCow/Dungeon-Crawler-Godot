@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Squirrel_Sprite.png-601d77d24295fc7eb408ed2839175c32.stex"
+path="res://.import/undefined.png-d6ffc345714caa034f79b126f8137e27.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Squirrel_Sprite.png"
-dest_files=[ "res://.import/Squirrel_Sprite.png-601d77d24295fc7eb408ed2839175c32.stex" ]
+source_file="res://Assets/Items/undefined.png"
+dest_files=[ "res://.import/undefined.png-d6ffc345714caa034f79b126f8137e27.stex" ]
 
 [params]
 

@@ -10,7 +10,7 @@ func _process(delta):
 		return
 
 func initialize_player():
-	player = get_tree().get_root().get_node("/root/World/Player")
+	player = get_tree().get_root().get_node("/root/World/YSort/Player")
 	if not player:
 		print("Couldn't find player to initialize")
 		return

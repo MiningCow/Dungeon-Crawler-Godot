@@ -5,7 +5,7 @@ const ACCELERATION = 4000
 const FRICTION = 4000
 var motion: Vector2 = Vector2.ZERO
 
-var inventory_resource = preload("res://Inventory.gd")
+var inventory_resource = preload("res://Resources/Inventory.gd")
 var inventory: Inventory = inventory_resource.new()
 
 #func _ready():
@@ -25,6 +25,26 @@ func _physics_process(delta):
 		print("INVENTORY")
 		for item in inventory.get_items():
 			print(item.display_name)
+
+	if Input.is_action_just_pressed("interact"):
+		var items_in_range = $PickupArea.items_in_range
+		if items_in_range.size():
+			items_in_range[items_in_range.values()[0]].pickup()
+
+	if Input.is_action_just_pressed("drop"):
+		var inventory = GameManager.player.inventory
+		var item = inventory.get_item(0)
+
+		if inventory.get_items() :
+			inventory.remove_item(0)
+
+			var ground_item_scene = load("res://Scenes/GroundItem/GroundItem.tscn")
+			var ground_item = ground_item_scene.instance()
+			ground_item.position = position
+			ground_item.item = item
+			get_tree().get_root().get_node("/root/World/").add_child(ground_item)
+
+
 
 func get_input_direction():
 	var input : Vector2 = Vector2()
