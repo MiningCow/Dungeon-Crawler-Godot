@@ -2,7 +2,7 @@ extends Area2D
 
 export(Resource) var item
 
-var effect
+var effect: PackedScene
 
 func _ready():
 	if not item:
@@ -28,4 +28,3 @@ func create_effect() -> void:
 		print("Effect exists")
 		var instance = effect.instance()
 		add_child(instance)
-
