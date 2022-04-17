@@ -38,9 +38,6 @@ texture = ExtResource( 2 )
 
 [node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="LightOffset" type="Position2D" parent="."]
 

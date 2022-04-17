@@ -18,10 +18,22 @@ _global_script_classes=[ {
 "class": "Item",
 "language": "GDScript",
 "path": "res://Resources/Item.gd"
+}, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://Scripts/StateMachine/State.gd"
+}, {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://Scripts/StateMachine/StateMachine.gd"
 } ]
 _global_script_class_icons={
 "Inventory": "",
-"Item": ""
+"Item": "",
+"State": "",
+"StateMachine": ""
 }
 
 [application]

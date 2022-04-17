@@ -15,10 +15,12 @@ var inventory: Inventory = inventory_resource.new()
 
 func _physics_process(delta):
 	var input_direction: Vector2 = get_input_direction();
+
 	if input_direction == Vector2.ZERO:
-		apply_friction(ACCELERATION * delta)
+		apply_friction(FRICTION * delta)
 	else:
 		move(input_direction * ACCELERATION * delta)
+
 	motion = move_and_slide(motion)
 
 	if Input.is_action_just_pressed("open_inventory"):
