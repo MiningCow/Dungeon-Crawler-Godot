@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://Assets/Tilesets/obstacleTileset.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Tilesets/tempTilesetOld.png" type="Texture" id=2]
@@ -7,6 +7,195 @@
 [ext_resource path="res://Items/blue_mushroom.tres" type="Resource" id=5]
 [ext_resource path="res://Items/dagger.tres" type="Resource" id=6]
 [ext_resource path="res://Scenes/Enemies/Slime.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/World.gd" type="Script" id=8]
+
+[sub_resource type="NavigationPolygon" id=126]
+vertices = PoolVector2Array( 32, 32, 128, 32, 128, 128, 32, 128 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=127]
+vertices = PoolVector2Array( 128, 128, 32, 128, 32, 0, 128, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=128]
+vertices = PoolVector2Array( 128, 96, 32, 96, 32, 0, 128, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=143]
+vertices = PoolVector2Array( 128, 96, 32, 96, 32, 32, 128, 32 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=132]
+vertices = PoolVector2Array( 128, 128, 0, 128, 0, 32, 128, 32 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=133]
+vertices = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=134]
+vertices = PoolVector2Array( 128, 96, 0, 96, 0, 0, 128, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=144]
+vertices = PoolVector2Array( 128, 96, 0, 96, 0, 32, 128, 32 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=140]
+vertices = PoolVector2Array( 96, 128, 0, 128, 0, 32, 96, 32 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=141]
+vertices = PoolVector2Array( 96, 128, 0, 128, 0, 0, 96, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=142]
+vertices = PoolVector2Array( 96, 96, 0, 96, 0, 0, 96, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=145]
+vertices = PoolVector2Array( 96, 96, 0, 96, 0, 32, 96, 32 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=146]
+vertices = PoolVector2Array( 96, 128, 32, 128, 32, 32, 96, 32 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=147]
+vertices = PoolVector2Array( 96, 128, 32, 128, 32, 0, 96, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=148]
+vertices = PoolVector2Array( 96, 96, 32, 96, 32, 0, 96, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=149]
+vertices = PoolVector2Array( 96, 96, 32, 96, 32, 32, 96, 32 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
+[sub_resource type="NavigationPolygon" id=150]
+vertices = PoolVector2Array( 96, 128, 96, 96, 128, 96, 128, 32, 32, 32, 32, 128 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
+
+[sub_resource type="NavigationPolygon" id=151]
+vertices = PoolVector2Array( 128, 96, 96, 96, 96, 128, 32, 128, 32, 0, 128, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
+
+[sub_resource type="NavigationPolygon" id=200]
+vertices = PoolVector2Array( 96, 32, 128, 32, 128, 128, 32, 128, 32, 0, 96, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
+
+[sub_resource type="NavigationPolygon" id=153]
+vertices = PoolVector2Array( 32, 0, 32, 96, 128, 96, 128, 32, 96, 32, 96, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
+
+[sub_resource type="NavigationPolygon" id=154]
+vertices = PoolVector2Array( 32, 0, 32, 128, 96, 128, 96, 96, 128, 96, 128, 32, 96, 32, 96, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7 ) ]
+
+[sub_resource type="NavigationPolygon" id=155]
+vertices = PoolVector2Array( 128, 96, 96, 96, 96, 128, 0, 128, 0, 32, 128, 32 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
+
+[sub_resource type="NavigationPolygon" id=198]
+vertices = PoolVector2Array( 96, 96, 96, 128, 0, 128, 0, 0, 128, 0, 128, 96 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
+
+[sub_resource type="NavigationPolygon" id=197]
+vertices = PoolVector2Array( 96, 32, 128, 32, 128, 128, 0, 128, 0, 0, 96, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
+
+[sub_resource type="NavigationPolygon" id=158]
+vertices = PoolVector2Array( 0, 0, 0, 96, 128, 96, 128, 32, 96, 32, 96, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
+
+[sub_resource type="NavigationPolygon" id=183]
+vertices = PoolVector2Array( 96, 32, 128, 32, 128, 96, 96, 96, 96, 128, 0, 128, 0, 0, 96, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7 ) ]
+
+[sub_resource type="NavigationPolygon" id=160]
+vertices = PoolVector2Array( 32, 128, 128, 128, 128, 32, 0, 32, 0, 96, 32, 96 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
+
+[sub_resource type="NavigationPolygon" id=203]
+vertices = PoolVector2Array( 32, 96, 0, 96, 0, 0, 128, 0, 128, 128, 32, 128 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
+
+[sub_resource type="NavigationPolygon" id=204]
+vertices = PoolVector2Array( 32, 32, 32, 0, 128, 0, 128, 128, 0, 128, 0, 32 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
+
+[sub_resource type="NavigationPolygon" id=163]
+vertices = PoolVector2Array( 0, 32, 0, 96, 128, 96, 128, 0, 32, 0, 32, 32 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
+
+[sub_resource type="NavigationPolygon" id=202]
+vertices = PoolVector2Array( 32, 96, 0, 96, 0, 32, 32, 32, 32, 0, 128, 0, 128, 128, 32, 128 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7 ) ]
+
+[sub_resource type="NavigationPolygon" id=195]
+vertices = PoolVector2Array( 96, 32, 0, 32, 0, 96, 32, 96, 32, 128, 96, 128 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
+
+[sub_resource type="NavigationPolygon" id=205]
+vertices = PoolVector2Array( 32, 96, 0, 96, 0, 0, 96, 0, 96, 128, 32, 128 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
+
+[sub_resource type="NavigationPolygon" id=206]
+vertices = PoolVector2Array( 32, 32, 32, 0, 96, 0, 96, 128, 0, 128, 0, 32 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
+
+[sub_resource type="NavigationPolygon" id=168]
+vertices = PoolVector2Array( 0, 32, 0, 96, 96, 96, 96, 0, 32, 0, 32, 32 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
+
+[sub_resource type="NavigationPolygon" id=169]
+vertices = PoolVector2Array( 0, 32, 32, 32, 32, 0, 96, 0, 96, 128, 32, 128, 32, 96, 0, 96 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7 ) ]
+
+[sub_resource type="NavigationPolygon" id=170]
+vertices = PoolVector2Array( 0, 96, 0, 32, 128, 32, 128, 96, 96, 96, 96, 128, 32, 128, 32, 96 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7 ) ]
+
+[sub_resource type="NavigationPolygon" id=201]
+vertices = PoolVector2Array( 96, 96, 96, 128, 32, 128, 32, 96, 0, 96, 0, 0, 128, 0, 128, 96 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7 ) ]
+
+[sub_resource type="NavigationPolygon" id=196]
+vertices = PoolVector2Array( 32, 32, 0, 32, 0, 128, 128, 128, 128, 32, 96, 32, 96, 0, 32, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7 ) ]
+
+[sub_resource type="NavigationPolygon" id=173]
+vertices = PoolVector2Array( 0, 96, 128, 96, 128, 32, 96, 32, 96, 0, 32, 0, 32, 32, 0, 32 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7 ) ]
+
+[sub_resource type="NavigationPolygon" id=174]
+vertices = PoolVector2Array( 0, 32, 32, 32, 32, 0, 96, 0, 96, 32, 128, 32, 128, 96, 96, 96, 96, 128, 32, 128, 32, 96, 0, 96 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ) ]
+
+[sub_resource type="NavigationPolygon" id=175]
+vertices = PoolVector2Array( 0, 0, 96, 0, 96, 32, 128, 32, 128, 128, 32, 128, 32, 96, 0, 96 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7 ) ]
+
+[sub_resource type="NavigationPolygon" id=176]
+vertices = PoolVector2Array( 0, 32, 32, 32, 32, 0, 128, 0, 128, 96, 96, 96, 96, 128, 0, 128 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7 ) ]
+
+[sub_resource type="NavigationPolygon" id=177]
+vertices = PoolVector2Array( 0, 32, 32, 32, 32, 0, 96, 0, 96, 32, 128, 32, 128, 128, 32, 128, 32, 96, 0, 96 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) ]
+
+[sub_resource type="NavigationPolygon" id=178]
+vertices = PoolVector2Array( 0, 96, 32, 96, 32, 128, 96, 128, 96, 96, 128, 96, 128, 0, 32, 0, 32, 32, 0, 32 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) ]
+
+[sub_resource type="NavigationPolygon" id=179]
+vertices = PoolVector2Array( 0, 32, 32, 32, 32, 0, 96, 0, 96, 32, 128, 32, 128, 96, 96, 96, 96, 128, 0, 128 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) ]
+
+[sub_resource type="NavigationPolygon" id=180]
+vertices = PoolVector2Array( 0, 0, 96, 0, 96, 32, 128, 32, 128, 96, 96, 96, 96, 128, 32, 128, 32, 96, 0, 96 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ) ]
 
 [sub_resource type="TileSet" id=1]
 resource_local_to_scene = true
@@ -14,15 +203,15 @@ resource_local_to_scene = true
 0/texture = ExtResource( 2 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 1024, 1024 )
+0/region = Rect2( 0, 0, 1408, 640 )
 0/tile_mode = 1
 0/autotile/bitmask_mode = 1
-0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 432, Vector2( 0, 1 ), 438, Vector2( 0, 2 ), 54, Vector2( 0, 3 ), 191, Vector2( 0, 4 ), 251, Vector2( 0, 5 ), 48, Vector2( 1, 0 ), 504, Vector2( 1, 1 ), 511, Vector2( 1, 2 ), 63, Vector2( 1, 3 ), 446, Vector2( 1, 4 ), 506, Vector2( 1, 5 ), 184, Vector2( 1, 6 ), 178, Vector2( 1, 7 ), 18, Vector2( 2, 0 ), 216, Vector2( 2, 1 ), 219, Vector2( 2, 2 ), 27, Vector2( 2, 4 ), 144, Vector2( 2, 5 ), 154, Vector2( 2, 6 ), 58, Vector2( 3, 0 ), 255, Vector2( 3, 1 ), 219, Vector2( 3, 2 ), 507, Vector2( 3, 3 ), 176, Vector2( 3, 4 ), 146, Vector2( 3, 5 ), 50, Vector2( 3, 6 ), 24, Vector2( 4, 0 ), 63, Vector2( 4, 1 ), 16, Vector2( 4, 2 ), 504, Vector2( 4, 3 ), 56, Vector2( 4, 4 ), 186, Vector2( 4, 5 ), 56, Vector2( 4, 6 ), 190, Vector2( 4, 7 ), 187, Vector2( 5, 0 ), 447, Vector2( 5, 1 ), 438, Vector2( 5, 2 ), 510, Vector2( 5, 3 ), 152, Vector2( 5, 4 ), 146, Vector2( 5, 5 ), 26, Vector2( 5, 6 ), 442, Vector2( 5, 7 ), 250, Vector2( 6, 2 ), 254, Vector2( 6, 3 ), 443, Vector2( 6, 4 ), 248, Vector2( 6, 5 ), 434, Vector2( 6, 6 ), 182, Vector2( 6, 7 ), 59, Vector2( 7, 2 ), 443, Vector2( 7, 3 ), 254, Vector2( 7, 4 ), 155, Vector2( 7, 5 ), 62, Vector2( 7, 6 ), 440, Vector2( 7, 7 ), 218 ]
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 432, Vector2( 0, 1 ), 438, Vector2( 0, 2 ), 54, Vector2( 0, 3 ), 48, Vector2( 1, 0 ), 504, Vector2( 1, 1 ), 511, Vector2( 1, 2 ), 63, Vector2( 1, 3 ), 56, Vector2( 2, 0 ), 216, Vector2( 2, 1 ), 219, Vector2( 2, 2 ), 27, Vector2( 2, 3 ), 24, Vector2( 3, 0 ), 144, Vector2( 3, 1 ), 146, Vector2( 3, 2 ), 18, Vector2( 3, 3 ), 16, Vector2( 4, 0 ), 176, Vector2( 4, 1 ), 182, Vector2( 4, 2 ), 434, Vector2( 4, 3 ), 50, Vector2( 4, 4 ), 434, Vector2( 5, 0 ), 248, Vector2( 5, 1 ), 255, Vector2( 5, 2 ), 507, Vector2( 5, 3 ), 59, Vector2( 5, 4 ), 251, Vector2( 6, 0 ), 440, Vector2( 6, 1 ), 447, Vector2( 6, 2 ), 510, Vector2( 6, 3 ), 62, Vector2( 6, 4 ), 446, Vector2( 7, 0 ), 152, Vector2( 7, 1 ), 155, Vector2( 7, 2 ), 218, Vector2( 7, 3 ), 26, Vector2( 7, 4 ), 154, Vector2( 8, 0 ), 184, Vector2( 8, 1 ), 191, Vector2( 8, 2 ), 506, Vector2( 8, 3 ), 58, Vector2( 8, 4 ), 186, Vector2( 9, 0 ), 443, Vector2( 9, 1 ), 254, Vector2( 9, 2 ), 442, Vector2( 9, 3 ), 190, Vector2( 10, 2 ), 250, Vector2( 10, 3 ), 187 ]
 0/autotile/icon_coordinate = Vector2( 4, 1 )
 0/autotile/tile_size = Vector2( 128, 128 )
 0/autotile/spacing = 0
 0/autotile/occluder_map = [  ]
-0/autotile/navpoly_map = [  ]
+0/autotile/navpoly_map = [ Vector2( 0, 0 ), SubResource( 126 ), Vector2( 0, 1 ), SubResource( 127 ), Vector2( 0, 2 ), SubResource( 128 ), Vector2( 0, 3 ), SubResource( 143 ), Vector2( 1, 0 ), SubResource( 132 ), Vector2( 1, 1 ), SubResource( 133 ), Vector2( 1, 2 ), SubResource( 134 ), Vector2( 1, 3 ), SubResource( 144 ), Vector2( 2, 0 ), SubResource( 140 ), Vector2( 2, 1 ), SubResource( 141 ), Vector2( 2, 2 ), SubResource( 142 ), Vector2( 2, 3 ), SubResource( 145 ), Vector2( 3, 0 ), SubResource( 146 ), Vector2( 3, 1 ), SubResource( 147 ), Vector2( 3, 2 ), SubResource( 148 ), Vector2( 3, 3 ), SubResource( 149 ), Vector2( 4, 0 ), SubResource( 150 ), Vector2( 4, 1 ), SubResource( 151 ), Vector2( 4, 2 ), SubResource( 200 ), Vector2( 4, 3 ), SubResource( 153 ), Vector2( 4, 4 ), SubResource( 154 ), Vector2( 5, 0 ), SubResource( 155 ), Vector2( 5, 1 ), SubResource( 198 ), Vector2( 5, 2 ), SubResource( 197 ), Vector2( 5, 3 ), SubResource( 158 ), Vector2( 5, 4 ), SubResource( 183 ), Vector2( 6, 0 ), SubResource( 160 ), Vector2( 6, 1 ), SubResource( 203 ), Vector2( 6, 2 ), SubResource( 204 ), Vector2( 6, 3 ), SubResource( 163 ), Vector2( 6, 4 ), SubResource( 202 ), Vector2( 7, 0 ), SubResource( 195 ), Vector2( 7, 1 ), SubResource( 205 ), Vector2( 7, 2 ), SubResource( 206 ), Vector2( 7, 3 ), SubResource( 168 ), Vector2( 7, 4 ), SubResource( 169 ), Vector2( 8, 0 ), SubResource( 170 ), Vector2( 8, 1 ), SubResource( 201 ), Vector2( 8, 2 ), SubResource( 196 ), Vector2( 8, 3 ), SubResource( 173 ), Vector2( 8, 4 ), SubResource( 174 ), Vector2( 9, 0 ), SubResource( 175 ), Vector2( 9, 1 ), SubResource( 176 ), Vector2( 9, 2 ), SubResource( 177 ), Vector2( 9, 3 ), SubResource( 178 ), Vector2( 10, 2 ), SubResource( 179 ), Vector2( 10, 3 ), SubResource( 180 ) ]
 0/autotile/priority_map = [  ]
 0/autotile/z_index_map = [  ]
 0/occluder_offset = Vector2( 0, 0 )
@@ -33,6 +222,29 @@ resource_local_to_scene = true
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
+1/name = "tempTilesetOld.png 1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 160, 96, 32, 32 )
+1/tile_mode = 1
+1/autotile/bitmask_mode = 0
+1/autotile/bitmask_flags = [  ]
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 32, 32 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
 
 [sub_resource type="OccluderPolygon2D" id=125]
 polygon = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -65,20 +277,23 @@ points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 0/z_index = 0
 
 [node name="World" type="Node2D"]
+script = ExtResource( 8 )
 
-[node name="Ground" type="TileMap" parent="."]
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="Ground" type="TileMap" parent="Navigation2D"]
 z_index = -1
 tile_set = SubResource( 1 )
 cell_size = Vector2( 128, 128 )
 format = 1
-tile_data = PoolIntArray( -1638400, 0, 262146, -1507338, 0, 0, -1507337, 0, 131076, -1507336, 0, 131076, -1507335, 0, 2, -1507330, 0, 0, -1507329, 0, 1, -1572864, 0, 458759, -1441802, 0, 65536, -1441801, 0, 65537, -1441800, 0, 65537, -1441799, 0, 65539, -1441794, 0, 65536, -1441793, 0, 65537, -1507328, 0, 65538, -1376266, 0, 65536, -1376265, 0, 65537, -1376264, 0, 65537, -1376263, 0, 65538, -1376258, 0, 131072, -1376257, 0, 131073, -1441792, 0, 262151, -1310730, 0, 131072, -1310729, 0, 131073, -1310728, 0, 4, -1310727, 0, 262151, -1376256, 0, 262147, -1245191, 0, 262149, -1245186, 0, 0, -1245185, 0, 131076, -1310720, 0, 262145, -1310719, 0, 2, -1179657, 0, 0, -1179656, 0, 131076, -1179655, 0, 262145, -1179654, 0, 2, -1179650, 0, 65536, -1179649, 0, 65537, -1245184, 0, 65537, -1245183, 0, 65538, -1114121, 0, 65541, -1114120, 0, 65537, -1114119, 0, 65537, -1114118, 0, 262144, -1114117, 0, 327684, -1114116, 0, 196612, -1114115, 0, 196612, -1114114, 0, 196609, -1114113, 0, 65537, -1179648, 0, 65537, -1179647, 0, 65538, -1048585, 0, 131072, -1048584, 0, 196608, -1048583, 0, 4, -1048582, 0, 131074, -1048578, 0, 65536, -1048577, 0, 65537, -1114112, 0, 65537, -1114111, 0, 65539, -983048, 0, 262149, -983042, 0, 131072, -983041, 0, 131073, -1048576, 0, 131073, -1048575, 0, 131074, -917512, 0, 262147, -851976, 0, 262147, -786440, 0, 327686, -786439, 0, 131076, -786438, 0, 2, -720904, 0, 65541, -720903, 0, 65537, -720902, 0, 65539, -655368, 0, 131072, -655367, 0, 4, -655366, 0, 262151, -589830, 0, 262149, -524294, 0, 262149, -458758, 0, 262147, -393222, 0, 262147, -327690, 0, 0, -327689, 0, 1, -327688, 0, 1, -327687, 0, 1, -327686, 0, 262145, -327685, 0, 2, -262154, 0, 65536, -262153, 0, 3, -262152, 0, 131073, -262151, 0, 5, -262150, 0, 65537, -262149, 0, 65539, -196618, 0, 65541, -196617, 0, 65538, -196615, 0, 65541, -196614, 0, 65537, -196613, 0, 262144, -196612, 0, 196612, -196611, 0, 327684, -196610, 0, 196612, -196609, 0, 196613, -131082, 0, 65541, -131081, 0, 131075, -131080, 0, 131076, -131079, 0, 131077, -131078, 0, 65537, -131077, 0, 65538, -131073, 0, 262147, -65546, 0, 65541, -65545, 0, 65537, -65544, 0, 65537, -65543, 0, 65537, -65542, 0, 65537, -65541, 0, 65538, -65537, 0, 262149, -10, 0, 131072, -9, 0, 4, -8, 0, 4, -7, 0, 4, -6, 0, 4, -5, 0, 131074, -2, 0, 0, -1, 0, 262145, -65536, 0, 1, -65535, 0, 2, 65534, 0, 65536, 65535, 0, 65537, 0, 0, 65537, 1, 0, 65539, 131070, 0, 131072, 131071, 0, 131073, 65536, 0, 4, 65537, 0, 131074 )
+tile_data = PoolIntArray( -1638400, 0, 3, -1507338, 0, 0, -1507337, 0, 1, -1507336, 0, 1, -1507335, 0, 2, -1507330, 0, 0, -1507329, 0, 1, -1572864, 0, 131079, -1441802, 0, 65536, -1441801, 0, 65537, -1441800, 0, 65537, -1441799, 0, 65538, -1441794, 0, 65536, -1441793, 0, 65537, -1507328, 0, 65538, -1376266, 0, 65536, -1376265, 0, 65537, -1376264, 0, 65537, -1376263, 0, 65538, -1376258, 0, 131072, -1376257, 0, 131073, -1441792, 0, 65543, -1310730, 0, 131072, -1310729, 0, 131073, -1310728, 0, 131073, -1310727, 0, 65543, -1376256, 0, 65539, -1245191, 0, 65539, -1245186, 0, 0, -1245185, 0, 1, -1310720, 0, 131080, -1310719, 0, 2, -1179657, 0, 0, -1179656, 0, 1, -1179655, 0, 131080, -1179654, 0, 2, -1179650, 0, 65536, -1179649, 0, 65537, -1245184, 0, 65537, -1245183, 0, 65538, -1114121, 0, 65536, -1114120, 0, 65537, -1114119, 0, 65537, -1114118, 0, 262149, -1114117, 0, 196609, -1114116, 0, 196609, -1114115, 0, 196609, -1114114, 0, 262150, -1114113, 0, 65537, -1179648, 0, 65537, -1179647, 0, 65538, -1048585, 0, 131072, -1048584, 0, 65544, -1048583, 0, 131073, -1048582, 0, 131074, -1048578, 0, 65536, -1048577, 0, 65537, -1114112, 0, 65537, -1114111, 0, 65538, -983048, 0, 65539, -983042, 0, 131072, -983041, 0, 131073, -1048576, 0, 131073, -1048575, 0, 131074, -917512, 0, 65539, -851976, 0, 65539, -786440, 0, 131076, -786439, 0, 1, -786438, 0, 2, -720904, 0, 65536, -720903, 0, 65537, -720902, 0, 65538, -655368, 0, 131072, -655367, 0, 131073, -655366, 0, 65543, -589830, 0, 65539, -524294, 0, 65539, -458758, 0, 65539, -393222, 0, 65539, -327696, 0, 4, -327695, 0, 196609, -327694, 0, 196609, -327693, 0, 7, -327690, 0, 0, -327689, 0, 1, -327688, 0, 1, -327687, 0, 1, -327686, 0, 131080, -327685, 0, 2, -262160, 0, 65539, -262157, 0, 65539, -262154, 0, 65536, -262153, 0, 65541, -262152, 0, 131073, -262151, 0, 65542, -262150, 0, 65537, -262149, 0, 65538, -196624, 0, 65539, -196621, 0, 196612, -196620, 0, 196609, -196619, 0, 196609, -196618, 0, 262150, -196617, 0, 65538, -196615, 0, 65536, -196614, 0, 65537, -196613, 0, 262149, -196612, 0, 196609, -196611, 0, 196609, -196610, 0, 196609, -196609, 0, 7, -131088, 0, 65539, -131082, 0, 65536, -131081, 0, 131077, -131080, 0, 1, -131079, 0, 131078, -131078, 0, 65537, -131077, 0, 65538, -131073, 0, 65539, -65552, 0, 65539, -65546, 0, 65536, -65545, 0, 65537, -65544, 0, 65537, -65543, 0, 65537, -65542, 0, 65537, -65541, 0, 65538, -65537, 0, 65539, -16, 0, 196612, -15, 0, 196609, -14, 0, 196609, -13, 0, 7, -10, 0, 131072, -9, 0, 131073, -8, 0, 65544, -7, 0, 131073, -6, 0, 131073, -5, 0, 131074, -2, 0, 0, -1, 0, 131080, -65536, 0, 1, -65535, 0, 2, 65523, 0, 65539, 65528, 0, 65539, 65534, 0, 65536, 65535, 0, 65537, 0, 0, 65537, 1, 0, 65538, 131059, 0, 196612, 131060, 0, 196609, 131061, 0, 196609, 131062, 0, 196609, 131063, 0, 196609, 131064, 0, 196615, 131070, 0, 131072, 131071, 0, 131073, 65536, 0, 131073, 65537, 0, 131074 )
 
 [node name="Obstacles" type="TileMap" parent="."]
 tile_set = SubResource( 124 )
 cell_size = Vector2( 128, 128 )
 collision_mask = 30
 format = 1
-tile_data = PoolIntArray( -1638401, 0, 0, -1703936, 0, 0, -1703935, 0, 0, -1572875, 0, 0, -1572874, 0, 0, -1572873, 0, 0, -1572872, 0, 0, -1572871, 0, 0, -1572870, 0, 0, -1572867, 0, 0, -1572866, 0, 0, -1572865, 0, 0, -1638399, 0, 0, -1507339, 0, 0, -1507334, 0, 0, -1507331, 0, 0, -1572863, 0, 0, -1441803, 0, 0, -1441798, 0, 0, -1441795, 0, 0, -1507327, 0, 0, -1376267, 0, 0, -1376262, 0, 0, -1376259, 0, 0, -1441791, 0, 0, -1310731, 0, 0, -1310726, 0, 0, -1310723, 0, 0, -1310722, 0, 0, -1310721, 0, 0, -1376255, 0, 0, -1376254, 0, 0, -1245195, 0, 0, -1245194, 0, 0, -1245193, 0, 0, -1245192, 0, 0, -1245190, 0, 0, -1245189, 0, 0, -1245187, 0, 0, -1310718, 0, 0, -1179658, 0, 0, -1179653, 0, 0, -1179652, 0, 0, -1179651, 0, 0, -1245182, 0, 0, -1114122, 0, 0, -1179646, 0, 0, -1048586, 0, 0, -1048581, 0, 0, -1048580, 0, 0, -1048579, 0, 0, -1114110, 0, 0, -983050, 0, 0, -983049, 0, 0, -983047, 0, 0, -983046, 0, 0, -983045, 0, 0, -983043, 0, 0, -1048574, 0, 0, -917513, 0, 0, -917511, 0, 0, -917507, 0, 0, -917506, 0, 0, -917505, 0, 0, -983040, 0, 0, -983039, 0, 0, -983038, 0, 0, -851977, 0, 0, -851975, 0, 0, -851974, 0, 0, -851973, 0, 0, -786441, 0, 0, -786437, 0, 0, -720905, 0, 0, -720901, 0, 0, -655369, 0, 0, -655365, 0, 0, -589833, 0, 0, -589832, 0, 0, -589831, 0, 0, -589829, 0, 0, -524295, 0, 0, -524293, 0, 0, -458759, 0, 0, -458757, 0, 0, -393227, 0, 0, -393226, 0, 0, -393225, 0, 0, -393224, 0, 0, -393223, 0, 0, -393221, 0, 0, -393220, 0, 0, -327691, 0, 0, -327684, 0, 0, -262155, 0, 0, -262148, 0, 0, -262147, 0, 0, -262146, 0, 0, -262145, 0, 0, -327680, 0, 0, -196619, 0, 0, -196616, 0, 0, -262144, 0, 0, -131083, 0, 0, -131076, 0, 0, -131075, 0, 0, -131074, 0, 0, -196608, 0, 0, -65547, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -11, 0, 0, -4, 0, 0, -3, 0, 0, -65534, 0, 0, 65525, 0, 0, 65526, 0, 0, 65527, 0, 0, 65528, 0, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 2, 0, 0, 131069, 0, 0, 65538, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0 )
+tile_data = PoolIntArray( -1638401, 0, 0, -1703936, 0, 0, -1703935, 0, 0, -1572875, 0, 0, -1572874, 0, 0, -1572873, 0, 0, -1572872, 0, 0, -1572871, 0, 0, -1572870, 0, 0, -1572867, 0, 0, -1572866, 0, 0, -1572865, 0, 0, -1638399, 0, 0, -1507339, 0, 0, -1507334, 0, 0, -1507331, 0, 0, -1572863, 0, 0, -1441803, 0, 0, -1441798, 0, 0, -1441795, 0, 0, -1507327, 0, 0, -1376267, 0, 0, -1376262, 0, 0, -1376259, 0, 0, -1441791, 0, 0, -1310731, 0, 0, -1310726, 0, 0, -1310723, 0, 0, -1310722, 0, 0, -1310721, 0, 0, -1376255, 0, 0, -1376254, 0, 0, -1245195, 0, 0, -1245194, 0, 0, -1245193, 0, 0, -1245192, 0, 0, -1245190, 0, 0, -1245189, 0, 0, -1245187, 0, 0, -1310718, 0, 0, -1179658, 0, 0, -1179653, 0, 0, -1179652, 0, 0, -1179651, 0, 0, -1245182, 0, 0, -1114122, 0, 0, -1179646, 0, 0, -1048586, 0, 0, -1048581, 0, 0, -1048580, 0, 0, -1048579, 0, 0, -1114110, 0, 0, -983050, 0, 0, -983049, 0, 0, -983047, 0, 0, -983046, 0, 0, -983045, 0, 0, -983043, 0, 0, -1048574, 0, 0, -917513, 0, 0, -917511, 0, 0, -917507, 0, 0, -917506, 0, 0, -917505, 0, 0, -983040, 0, 0, -983039, 0, 0, -983038, 0, 0, -851977, 0, 0, -851975, 0, 0, -851974, 0, 0, -851973, 0, 0, -786441, 0, 0, -786437, 0, 0, -720905, 0, 0, -720901, 0, 0, -655369, 0, 0, -655365, 0, 0, -589833, 0, 0, -589832, 0, 0, -589831, 0, 0, -589829, 0, 0, -524295, 0, 0, -524293, 0, 0, -458759, 0, 0, -458757, 0, 0, -393233, 0, 0, -393232, 0, 0, -393231, 0, 0, -393230, 0, 0, -393229, 0, 0, -393228, 0, 0, -393227, 0, 0, -393226, 0, 0, -393225, 0, 0, -393224, 0, 0, -393223, 0, 0, -393221, 0, 0, -393220, 0, 0, -327697, 0, 0, -327692, 0, 0, -327691, 0, 0, -327684, 0, 0, -262161, 0, 0, -262159, 0, 0, -262158, 0, 0, -262156, 0, 0, -262155, 0, 0, -262148, 0, 0, -262147, 0, 0, -262146, 0, 0, -262145, 0, 0, -327680, 0, 0, -196625, 0, 0, -196623, 0, 0, -196622, 0, 0, -196616, 0, 0, -262144, 0, 0, -131089, 0, 0, -131087, 0, 0, -131086, 0, 0, -131085, 0, 0, -131084, 0, 0, -131083, 0, 0, -131076, 0, 0, -131075, 0, 0, -131074, 0, 0, -196608, 0, 0, -65553, 0, 0, -65551, 0, 0, -65550, 0, 0, -65549, 0, 0, -65548, 0, 0, -65547, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -17, 0, 0, -12, 0, 0, -11, 0, 0, -4, 0, 0, -3, 0, 0, -65534, 0, 0, 65519, 0, 0, 65520, 0, 0, 65521, 0, 0, 65522, 0, 0, 65524, 0, 0, 65525, 0, 0, 65526, 0, 0, 65527, 0, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 2, 0, 0, 131058, 0, 0, 131065, 0, 0, 131069, 0, 0, 65538, 0, 0, 196594, 0, 0, 196595, 0, 0, 196596, 0, 0, 196597, 0, 0, 196598, 0, 0, 196599, 0, 0, 196600, 0, 0, 196601, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0 )
 
 [node name="YSort" type="YSort" parent="."]
 z_index = 1
@@ -98,5 +313,10 @@ position = Vector2( -200, -448 )
 item = ExtResource( 6 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color( 0, 0, 0, 1 )
+
+[node name="NavigationTimer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[connection signal="timeout" from="NavigationTimer" to="." method="_on_NavigationTimer_timeout"]

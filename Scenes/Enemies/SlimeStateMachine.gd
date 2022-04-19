@@ -14,4 +14,5 @@ func state_logic():
 		stop:
 			if owner.target && owner.can_see_target(): set_state(pursue)
 		pursue:
+			if pursue.reached_target: print("attack state")
 			if !owner.target: set_state(stop)

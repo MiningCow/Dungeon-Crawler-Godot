@@ -1,12 +1,5 @@
-extends "res://Scripts/StateMachine/State.gd"
+extends "res://Scripts/StateMachine/PathfindMovingTarget.gd"
 
-func update(delta):
-	var target_direction: Vector2 = owner.target.position - owner.position
-	owner.motion += target_direction
-	owner.motion = owner.motion.normalized() * owner.speed * delta
-
-func enter(last_state):
-	pass
-
-func exit():
-	pass
+func update_path():
+	if owner.target:
+		set_path(owner.target.position)

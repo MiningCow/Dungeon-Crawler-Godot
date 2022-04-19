@@ -13,11 +13,7 @@ func can_see_target():
 	var space_state = get_world_2d().direct_space_state
 	var raycast = space_state.intersect_ray(position, target.position, [self], collision_mask)
 
-	if (raycast.collider == target):
-		print("true")
-		return true
-
-	return false
+	return raycast.collider == target
 
 func _on_VisionRange_body_entered(body):
 	if target: return
