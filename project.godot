@@ -54,6 +54,10 @@ window/size/height=1080
 window/size/resizable=false
 window/stretch/mode="viewport"
 
+[global]
+
+layer=false
+
 [input]
 
 ui_accept={

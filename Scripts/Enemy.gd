@@ -1,19 +1,21 @@
-extends KinematicBody2D
+extends "res://Scripts/Entity.gd"
 
 onready var state_machine = $StateMachine
-export(int) var speed = 10000
-var target
-var motion: Vector2 = Vector2.ZERO
+var target = null
 
 func _physics_process(delta):
 	state_machine.update(delta)
-	move_and_slide(motion)
+	main(delta)
+	move()
 
 func can_see_target():
 	var space_state = get_world_2d().direct_space_state
 	var raycast = space_state.intersect_ray(position, target.position, [self], collision_mask)
 
 	return raycast.collider == target
+
+func main(delta):
+	pass
 
 func _on_VisionRange_body_entered(body):
 	if target: return
