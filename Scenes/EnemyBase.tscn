@@ -9,13 +9,13 @@ collision_layer = 4
 collision_mask = 3
 script = ExtResource( 3 )
 
-[node name="VisionRange" type="Area2D" parent="." index="3"]
+[node name="VisionRange" type="Area2D" parent="." index="2"]
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VisionRange" index="0"]
 
-[node name="StateMachine" type="Node" parent="." index="4"]
+[node name="StateMachine" type="Node" parent="." index="3"]
 script = ExtResource( 2 )
 
 [connection signal="body_entered" from="VisionRange" to="." method="_on_VisionRange_body_entered"]

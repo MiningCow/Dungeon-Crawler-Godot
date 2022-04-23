@@ -2,12 +2,12 @@
 
 [ext_resource path="res://Assets/Tilesets/obstacleTileset.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Tilesets/tempTilesetOld.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/Player/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/GroundItem/GroundItem.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Items/blue_mushroom.tres" type="Resource" id=5]
 [ext_resource path="res://Items/dagger.tres" type="Resource" id=6]
 [ext_resource path="res://Scenes/Enemies/Slime.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/World.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=9]
 
 [sub_resource type="NavigationPolygon" id=126]
 vertices = PoolVector2Array( 32, 32, 128, 32, 128, 128, 32, 128 )
@@ -298,9 +298,7 @@ tile_data = PoolIntArray( -1638401, 0, 0, -1703936, 0, 0, -1703935, 0, 0, -15728
 [node name="YSort" type="YSort" parent="."]
 z_index = 1
 
-[node name="Player" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( -25, -25 )
-speed = 20000
+[node name="Player" parent="YSort" instance=ExtResource( 9 )]
 
 [node name="Slime" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( -1143, -462 )
@@ -314,6 +312,7 @@ position = Vector2( -200, -448 )
 item = ExtResource( 6 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="NavigationTimer" type="Timer" parent="."]

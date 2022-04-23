@@ -40,8 +40,6 @@ func _physics_process(delta):
 			ground_item.item = item
 			get_tree().get_root().get_node("/root/World/").add_child(ground_item)
 
-
-
 func get_input_direction():
 	var input : Vector2 = Vector2()
 	input.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
