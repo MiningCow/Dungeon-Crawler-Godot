@@ -299,6 +299,7 @@ tile_data = PoolIntArray( -1638401, 0, 0, -1703936, 0, 0, -1703935, 0, 0, -15728
 z_index = 1
 
 [node name="Player" parent="YSort" instance=ExtResource( 9 )]
+speed = 22000
 
 [node name="Slime" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( -1143, -462 )

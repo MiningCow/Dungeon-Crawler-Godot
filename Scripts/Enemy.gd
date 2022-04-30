@@ -10,7 +10,7 @@ func _physics_process(delta):
 
 func can_see_target():
 	var space_state = get_world_2d().direct_space_state
-	var raycast = space_state.intersect_ray(position, target.position, [self], collision_mask)
+	var raycast = space_state.intersect_ray(position, target.position, [self], 3)
 
 	return raycast.collider == target
 
