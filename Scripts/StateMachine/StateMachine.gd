@@ -1,4 +1,5 @@
 extends Node
+
 class_name StateMachine
 
 export(NodePath) var initial_state
@@ -15,7 +16,6 @@ func _ready():
 		set_state(get_node(initial_state))
 	else:
 		set_state(get_child(0))
-	pass
 
 func state_logic():
 	pass

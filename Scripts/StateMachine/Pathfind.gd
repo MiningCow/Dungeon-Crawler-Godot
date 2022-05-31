@@ -1,4 +1,6 @@
-extends "res://Scripts/StateMachine/State.gd"
+extends State
+
+class_name Pathfind
 
 onready var navigate = get_tree().get_root().get_node("World/Navigation2D")
 export(int) var threshold = 10

@@ -9,6 +9,21 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Entity",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://Scripts/Entities/Enemies/Enemy.gd"
+}, {
+"base": "Stats",
+"class": "EnemyStats",
+"language": "GDScript",
+"path": "res://Scripts/Entities/EnemyStats.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Entity",
+"language": "GDScript",
+"path": "res://Scripts/Entities/Entity.gd"
+}, {
 "base": "Resource",
 "class": "Inventory",
 "language": "GDScript",
@@ -19,6 +34,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Resources/Item.gd"
 }, {
+"base": "State",
+"class": "Pathfind",
+"language": "GDScript",
+"path": "res://Scripts/StateMachine/Pathfind.gd"
+}, {
+"base": "Pathfind",
+"class": "PathfindEntity",
+"language": "GDScript",
+"path": "res://Scripts/StateMachine/PathfindMovingTarget.gd"
+}, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
@@ -28,12 +53,29 @@ _global_script_classes=[ {
 "class": "StateMachine",
 "language": "GDScript",
 "path": "res://Scripts/StateMachine/StateMachine.gd"
+}, {
+"base": "Node",
+"class": "Stats",
+"language": "GDScript",
+"path": "res://Scripts/Entities/Stats.gd"
+}, {
+"base": "Position2D",
+"class": "Weapon",
+"language": "GDScript",
+"path": "res://Scripts/Combat/Weapons/WeaponBase.gd"
 } ]
 _global_script_class_icons={
+"Enemy": "",
+"EnemyStats": "",
+"Entity": "",
 "Inventory": "",
 "Item": "",
+"Pathfind": "",
+"PathfindEntity": "",
 "State": "",
-"StateMachine": ""
+"StateMachine": "",
+"Stats": "",
+"Weapon": ""
 }
 
 [application]
@@ -125,6 +167,11 @@ interact={
 drop={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":90,"unicode":0,"echo":false,"script":null)
+ ]
+}
+attack={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
 

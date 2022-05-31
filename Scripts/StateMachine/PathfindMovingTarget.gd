@@ -1,4 +1,6 @@
-extends "res://Scripts/StateMachine/Pathfind.gd"
+extends Pathfind
+
+class_name PathfindEntity
 
 func enter(last_state):
 	add_to_group("pathfind")
