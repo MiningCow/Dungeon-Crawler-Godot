@@ -9,4 +9,3 @@ id = "dagger"
 display_name = "Dagger"
 description = "An old, dull,  rusty looking dagger"
 texture = ExtResource( 2 )
-effect = 0

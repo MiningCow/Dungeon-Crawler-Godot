@@ -12,8 +12,8 @@ func _physics_process(delta):
 func _on_Hitbox_area_entered(area):
 	die()
 
-#func _on_Hitbox_body_entered(body):
-#	die()
+func _on_Hitbox_body_entered(body):
+	die()
 
 func die():
 	queue_free()

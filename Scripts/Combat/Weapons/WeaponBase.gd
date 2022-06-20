@@ -16,8 +16,8 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	rng.randomize()
 	timer.wait_time = cooldown
-	owner.connect("player_is_attacking", self, "_on_Player_attack")
-	look_at(get_viewport().get_mouse_position())
+	get_parent().connect("player_is_attacking", self, "_on_Player_attack")
+	look_at_mouse()
 
 func _input(event):
 	if event is InputEventMouseMotion:

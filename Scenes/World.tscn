@@ -1,10 +1,11 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Assets/Tilesets/obstacleTileset.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Tilesets/tempTilesetOld.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Items/fireball_staff.tres" type="Resource" id=3]
 [ext_resource path="res://Scenes/GroundItem.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Items/blue_mushroom.tres" type="Resource" id=5]
-[ext_resource path="res://Items/dagger.tres" type="Resource" id=6]
+[ext_resource path="res://Resources/Items/blue_mushroom.tres" type="Resource" id=5]
+[ext_resource path="res://Resources/Items/dagger.tres" type="Resource" id=6]
 [ext_resource path="res://Scenes/Entities/Enemies/Slime.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/World.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Entities/Player.tscn" type="PackedScene" id=9]
@@ -310,6 +311,10 @@ position = Vector2( -1146, -440 )
 [node name="GroundDagger" parent="." instance=ExtResource( 4 )]
 position = Vector2( -200, -448 )
 item = ExtResource( 6 )
+
+[node name="GroundStaff" parent="." instance=ExtResource( 4 )]
+position = Vector2( -144, 152 )
+item = ExtResource( 3 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false

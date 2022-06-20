@@ -3,9 +3,9 @@ extends Entity
 var ground_item_scene = preload("res://Scenes/GroundItem.tscn")
 var inventory_resource = preload("res://Resources/Inventory.gd")
 var inventory: Inventory = inventory_resource.new()
-onready var weapon = $Weapon
+var weapon = get_node_or_null("Weapon")
+onready var hand_position = $HandPosition
 #func _ready():
-#	pass
 #	pseudo code
 #	inventory.board = config.player inventory board shape
 
@@ -41,16 +41,26 @@ func _physics_process(delta):
 			ground_item.item = item
 			get_tree().get_root().get_node("/root/World/").add_child(ground_item)
 
+	if Input.is_action_just_pressed("hotbar_1"): equip(inventory.get_item(0))
+
 func get_input_direction():
 	var input : Vector2 = Vector2()
 	input.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	input.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	return input.normalized()
 
-func _input(event):
-	if event.is_action_pressed("attack"):  emit_signal("player_is_attacking", true)
-	if event.is_action_released("attack"): emit_signal("player_is_attacking", false)
+func equip(item):
+	if !(item is WeaponItem): return
+
+	if get_node_or_null("Weapon"): $Weapon.queue_free()
+	var new_weapon = item.weapon.instance()
+	new_weapon.position = hand_position.position
+	add_child(new_weapon)
 
 func die(): #temp player death
 	print("player died!")
 	health = stats.max_health
+
+func _input(event):
+	if event.is_action_pressed("attack"):  emit_signal("player_is_attacking", true)
+	if event.is_action_released("attack"): emit_signal("player_is_attacking", false)
