@@ -15,5 +15,5 @@ func attack():
 	new_projectile.direction = direction
 	new_projectile.position = projectile_start.global_position
 #	new_projectile.damage += damage
-	$Projectiles.add_child(new_projectile)
+	get_parent().get_node("Projectiles").add_child(new_projectile)
 	.attack()

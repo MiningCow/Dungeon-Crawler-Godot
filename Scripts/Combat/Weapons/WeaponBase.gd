@@ -4,6 +4,7 @@ class_name Weapon
 
 onready var timer = $Timer
 onready var sound = $Sound
+onready var animation = $AnimationPlayer
 
 export(int) var damage
 export(float) var cooldown
@@ -25,6 +26,11 @@ func _input(event):
 
 func _physics_process(delta):
 	if attacking && can_attack: attack()
+#	DEBUG CAN_ATTACK
+#	if can_attack:
+#		$Sprite.self_modulate = Color.green
+#	else:
+#		$Sprite.self_modulate = Color.red
 
 func attack():
 	can_attack = false

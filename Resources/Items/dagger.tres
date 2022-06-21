@@ -1,11 +1,13 @@
-[gd_resource type="Resource" load_steps=3 format=2]
+[gd_resource type="Resource" load_steps=4 format=2]
 
-[ext_resource path="res://Resources/Item.gd" type="Script" id=1]
+[ext_resource path="res://Resources/WeaponItem.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Items/dagger.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Combat/Weapons/Dagger.tscn" type="PackedScene" id=3]
 
 [resource]
 script = ExtResource( 1 )
 id = "dagger"
 display_name = "Dagger"
-description = "An old, dull,  rusty looking dagger"
+description = "An old, dull, rusty looking dagger"
 texture = ExtResource( 2 )
+weapon = ExtResource( 3 )

@@ -4,6 +4,7 @@ var ground_item_scene = preload("res://Scenes/GroundItem.tscn")
 var inventory_resource = preload("res://Resources/Inventory.gd")
 var inventory: Inventory = inventory_resource.new()
 var weapon = get_node_or_null("Weapon")
+
 onready var hand_position = $HandPosition
 #func _ready():
 #	pseudo code
@@ -52,7 +53,9 @@ func get_input_direction():
 func equip(item):
 	if !(item is WeaponItem): return
 
-	if get_node_or_null("Weapon"): $Weapon.queue_free()
+	var old_weapon = get_node_or_null("Weapon")
+	if old_weapon:
+		old_weapon.free()
 	var new_weapon = item.weapon.instance()
 	new_weapon.position = hand_position.position
 	add_child(new_weapon)
@@ -64,3 +67,6 @@ func die(): #temp player death
 func _input(event):
 	if event.is_action_pressed("attack"):  emit_signal("player_is_attacking", true)
 	if event.is_action_released("attack"): emit_signal("player_is_attacking", false)
+#	if event.is_action_pressed("attack"):  is_attacking = true
+#	if event.is_action_released("attack"): is_attacking = false
+

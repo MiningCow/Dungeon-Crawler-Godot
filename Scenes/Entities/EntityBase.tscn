@@ -16,6 +16,10 @@ script = ExtResource( 3 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 2 )]
 
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+
+[node name="Projectiles" type="Node" parent="."]
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 
 [editable path="Hurtbox"]

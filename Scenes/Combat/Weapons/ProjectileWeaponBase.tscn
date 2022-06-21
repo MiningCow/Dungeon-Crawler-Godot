@@ -7,5 +7,3 @@
 script = ExtResource( 2 )
 
 [node name="ProjectileStart" type="Position2D" parent="Sprite" index="0"]
-
-[node name="Projectiles" type="Node" parent="." index="4"]

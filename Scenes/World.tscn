@@ -312,6 +312,10 @@ position = Vector2( -1146, -440 )
 position = Vector2( -200, -448 )
 item = ExtResource( 6 )
 
+[node name="GroundDagger2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 150, 153 )
+item = ExtResource( 6 )
+
 [node name="GroundStaff" parent="." instance=ExtResource( 4 )]
 position = Vector2( -144, 152 )
 item = ExtResource( 3 )

@@ -22,6 +22,7 @@ func set_health(value):
 	else: health = 0
 
 func take_damage(damage):
+	$Sound.play()
 	self.health -= damage
 	if health == 0:
 		die()
