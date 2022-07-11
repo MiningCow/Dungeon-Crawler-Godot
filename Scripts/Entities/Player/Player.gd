@@ -5,6 +5,7 @@ var inventory_resource = preload("res://Resources/Inventory.gd")
 var inventory: Inventory = inventory_resource.new()
 var weapon = get_node_or_null("Weapon")
 
+onready var sprite = $Sprite
 onready var hand_position = $HandPosition
 #func _ready():
 #	pseudo code
@@ -61,12 +62,18 @@ func equip(item):
 	add_child(new_weapon)
 
 func die(): #temp player death
-	print("player died!")
-	health = stats.max_health
+	print("Player died!")
+#	self.health = stats.max_health
 
 func _input(event):
 	if event.is_action_pressed("attack"):  emit_signal("player_is_attacking", true)
 	if event.is_action_released("attack"): emit_signal("player_is_attacking", false)
 #	if event.is_action_pressed("attack"):  is_attacking = true
 #	if event.is_action_released("attack"): is_attacking = false
-
+#	if event is InputEventMouseMotion:
+#		var mouse = get_viewport().get_mouse_position()
+#		if mouse.x > get_viewport().size.x/2:
+#			$Node.scale.x = -1
+#		else:
+#			$Node .scale.x = 1
+#		if weapon: weapon.position = hand_position.position

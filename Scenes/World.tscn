@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://Assets/Tilesets/obstacleTileset.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Tilesets/tempTilesetOld.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Entities/Enemies/Slime.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/World.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/Entities/Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/UI/HealthUI.tscn" type="PackedScene" id=10]
 
 [sub_resource type="NavigationPolygon" id=126]
 vertices = PoolVector2Array( 32, 32, 128, 32, 128, 128, 32, 128 )
@@ -301,6 +302,9 @@ z_index = 1
 
 [node name="Player" parent="YSort" instance=ExtResource( 9 )]
 
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
+remote_path = NodePath("../../../Camera2D")
+
 [node name="GroundMushroom" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -832, -1472 )
 item = ExtResource( 5 )
@@ -327,5 +331,13 @@ color = Color( 0, 0, 0, 1 )
 [node name="NavigationTimer" type="Timer" parent="."]
 wait_time = 0.25
 autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+process_mode = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 10 )]
 
 [connection signal="timeout" from="NavigationTimer" to="." method="_on_NavigationTimer_timeout"]

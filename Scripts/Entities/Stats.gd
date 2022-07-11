@@ -1,7 +1,12 @@
 extends Node
 
 class_name Stats
-#signal stats_changed
 
 export(int) var speed
 export(int) var max_health
+export(int) var health: int = max_health setget set_health
+
+func set_health(value):
+	if value != health:
+		health = clamp(value, 0, max_health)
+	else: health = 0
