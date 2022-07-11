@@ -1,0 +1,94 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Combat/Weapons/MeleeWeaponBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Items/dagger.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sounds/dagger.mp3" type="AudioStream" id=3]
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 25, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 25, 0 ), Vector2( 55, 0 ), Vector2( 23, 0 ), Vector2( 25, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 45.5, 13 )
+
+[node name="Weapon" instance=ExtResource( 1 )]
+damage = 3
+cooldown = 0.2
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2( 25, 0 )
+rotation = 0.88946
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Timer" parent="." index="1"]
+wait_time = 0.5
+
+[node name="Sound" parent="." index="2"]
+stream = ExtResource( 3 )
+
+[node name="AnimationPlayer" parent="." index="3"]
+anims/RESET = SubResource( 3 )
+anims/attack = SubResource( 2 )
+
+[node name="Hitbox" parent="." index="4"]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 52.5, 0 )
+shape = SubResource( 1 )
+disabled = true
+
+[editable path="Hitbox"]

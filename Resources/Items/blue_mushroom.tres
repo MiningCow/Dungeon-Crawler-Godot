@@ -9,4 +9,3 @@ id = "blue_mushroom"
 display_name = "Blue Mushroom"
 description = "A strange glowing mushroom"
 texture = ExtResource( 1 )
-effect = 1

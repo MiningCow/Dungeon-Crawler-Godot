@@ -1,25 +1,25 @@
-extends KinematicBody2D
+extends Entity
 
-const MAX_SPEED = 500
-const ACCELERATION = 4000
-const FRICTION = 4000
-var motion: Vector2 = Vector2.ZERO
-
+var ground_item_scene = preload("res://Scenes/GroundItem.tscn")
 var inventory_resource = preload("res://Resources/Inventory.gd")
 var inventory: Inventory = inventory_resource.new()
+var weapon = get_node_or_null("Weapon")
 
+onready var hand_position = $HandPosition
 #func _ready():
-#	pass
 #	pseudo code
 #	inventory.board = config.player inventory board shape
 
+signal player_is_attacking(using)
+
 func _physics_process(delta):
 	var input_direction: Vector2 = get_input_direction();
-	if input_direction == Vector2.ZERO:
-		apply_friction(ACCELERATION * delta)
+
+	if input_direction != Vector2.ZERO:
+		motion = input_direction * self.speed * delta
 	else:
-		move(input_direction * ACCELERATION * delta)
-	motion = move_and_slide(motion)
+		motion = Vector2.ZERO
+	move()
 
 	if Input.is_action_just_pressed("open_inventory"):
 		print("INVENTORY")
@@ -32,19 +32,17 @@ func _physics_process(delta):
 			items_in_range[items_in_range.values()[0]].pickup()
 
 	if Input.is_action_just_pressed("drop"):
-		var inventory = GameManager.player.inventory
 		var item = inventory.get_item(0)
 
 		if inventory.get_items() :
 			inventory.remove_item(0)
 
-			var ground_item_scene = load("res://Scenes/GroundItem/GroundItem.tscn")
 			var ground_item = ground_item_scene.instance()
 			ground_item.position = position
 			ground_item.item = item
 			get_tree().get_root().get_node("/root/World/").add_child(ground_item)
 
-
+	if Input.is_action_just_pressed("hotbar_1"): equip(inventory.get_item(0))
 
 func get_input_direction():
 	var input : Vector2 = Vector2()
@@ -52,12 +50,23 @@ func get_input_direction():
 	input.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	return input.normalized()
 
-func apply_friction(amount):
-	motion = motion.move_toward(Vector2.ZERO, amount)
+func equip(item):
+	if !(item is WeaponItem): return
 
-func move(acceleration):
-	motion += acceleration
-	motion = motion.clamped(MAX_SPEED)
+	var old_weapon = get_node_or_null("Weapon")
+	if old_weapon:
+		old_weapon.free()
+	var new_weapon = item.weapon.instance()
+	new_weapon.position = hand_position.position
+	add_child(new_weapon)
 
-#func _process(delta):
-#	pass
+func die(): #temp player death
+	print("player died!")
+	health = stats.max_health
+
+func _input(event):
+	if event.is_action_pressed("attack"):  emit_signal("player_is_attacking", true)
+	if event.is_action_released("attack"): emit_signal("player_is_attacking", false)
+#	if event.is_action_pressed("attack"):  is_attacking = true
+#	if event.is_action_released("attack"): is_attacking = false
+
