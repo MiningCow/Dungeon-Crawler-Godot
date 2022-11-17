@@ -1,8 +1,6 @@
-extends Area2D
+extends Interactable
 
 export(Resource) var item
-
-var effect: PackedScene
 
 func _ready():
 	if not item:
@@ -10,10 +8,10 @@ func _ready():
 
 	$Sprite.texture = item.texture
 
-#	create_effect()
 
-func set_item(new_item: Item) -> void :
+func set_item(new_item: Item) -> void:
 	item = new_item
+
 
 func pickup() -> void :
 	var player = GameManager.player
@@ -21,4 +19,5 @@ func pickup() -> void :
 
 	queue_free()
 
-# For effects they can just be a packed scene in the resource
+
+func interact(interactor): pickup()

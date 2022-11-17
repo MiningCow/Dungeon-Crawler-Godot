@@ -24,6 +24,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Entities/Entity.gd"
 }, {
+"base": "Area2D",
+"class": "Hurtbox",
+"language": "GDScript",
+"path": "res://Scripts/Combat/Hurtbox.gd"
+}, {
+"base": "Area2D",
+"class": "Interactable",
+"language": "GDScript",
+"path": "res://Interactable.gd"
+}, {
 "base": "Resource",
 "class": "Inventory",
 "language": "GDScript",
@@ -73,6 +83,8 @@ _global_script_class_icons={
 "Enemy": "",
 "EnemyStats": "",
 "Entity": "",
+"Hurtbox": "",
+"Interactable": "",
 "Inventory": "",
 "Item": "",
 "Pathfind": "",
@@ -101,6 +113,7 @@ window/size/width=1920
 window/size/height=1080
 window/size/resizable=false
 window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [global]
 
@@ -199,7 +212,7 @@ hotbar_1={
 2d_physics/layer_2="player"
 2d_physics/layer_3="enemies"
 2d_physics/layer_4="lights"
-2d_physics/layer_5="items"
+2d_physics/layer_5="interactions"
 2d_physics/layer_6="enemy_hurtbox"
 2d_physics/layer_7="player_hurtbox"
 

@@ -7,7 +7,10 @@ var weapon = get_node_or_null("Weapon")
 
 onready var sprite = $Sprite
 onready var hand_position = $HandPosition
-#func _ready():
+onready var interaction_area = $InteractionArea
+
+func _ready():
+	interaction_area.player = self
 #	pseudo code
 #	inventory.board = config.player inventory board shape
 
@@ -18,6 +21,7 @@ func _physics_process(delta):
 
 	if input_direction != Vector2.ZERO:
 		motion = input_direction * self.speed * delta
+		interaction_area.find_closest_interaction() ################# idk where else to put this
 	else:
 		motion = Vector2.ZERO
 	move()
@@ -28,9 +32,7 @@ func _physics_process(delta):
 			print(item.display_name)
 
 	if Input.is_action_just_pressed("interact"):
-		var items_in_range = $PickupArea.items_in_range
-		if items_in_range.size():
-			items_in_range[items_in_range.values()[0]].pickup()
+		interaction_area.attempt_interaction()
 
 	if Input.is_action_just_pressed("drop"):
 		var item = inventory.get_item(0)

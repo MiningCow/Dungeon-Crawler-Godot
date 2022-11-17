@@ -10,6 +10,7 @@ func _physics_process(delta):
 	position += direction * speed * delta
 
 func _on_Hitbox_area_entered(area):
+#	if area is Hurtbox: area.damage()
 	die()
 
 func _on_Hitbox_body_entered(body):
