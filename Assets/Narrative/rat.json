@@ -1,0 +1,314 @@
+{
+    "name": "Rat",
+	"start": {
+        "start": "start",
+        "go_on": "go_on",
+        "find_weapon": "09",
+        "refused_1": "12",
+        "refused_2": "25"
+    },
+	"passages": {
+		"start": {
+			"text": "Ah, just the person I need!",
+            "next": "01"
+		},
+        "01": {
+			"text": "Howdy, ma'am! What brings you to these dungeons? Oh, I'm sure whatever it is must be very important..",
+            "next": "02"
+		},
+        "02": {
+			"text": "speaking of important, I have one very small, tiny little favour to ask of you, if you're willing.",
+            "set": {
+                "id": "talked_Rat",
+                "value": "true"
+            },
+            "links": [
+                {
+                    "text": "Sure, I'll help",
+                    "link": "03"
+                },
+                {
+                    "text": "I'd rather not",
+                    "link": "20"
+                }
+            ]
+        },
+        "finally": {
+            "text": "Finally! Thank you.",
+            "next": "06"
+        },
+        "20": {
+            "text": "Phooey. I suppose I'll have to find some other, more helpful fellow to aid me.. What a poor dejected rat am I!",
+            "links": [
+                {
+                    "text": "Oh fine, I'll help",
+                    "link": "20a"
+                },
+                {
+                    "text": "sucks for you...",
+                    "link": "21"
+                }
+            ]
+        },
+        "21": {
+            "text": "Hmph! All I need is some mushrooms for the Day of the Great Soup. I hardly need your help anyway, but I'll let you help me, I guess.",
+            "links": [
+                {
+                    "text": "Fine, I'll help",
+                    "link": "finally"
+                },
+                {
+                    "text": "Sorry, no",
+                    "link": "22"
+                }
+            ]
+        },
+        "22": {
+            "text": "I'll pay you for it! Does that help?",
+            "links": [
+                {
+                    "text": "Okay fine",
+                    "link": "finally"
+                },
+                {
+                    "text": "I'm still not helping you",
+                    "link": "23"
+                }
+            ]
+        },
+        "23": {
+            "text": "Blather and rot. I'll see you at the Day of the Great Soup. I'm sure it'll lack flavour without my Ripplespore mushrooms.",
+            "links": [
+                {
+                    "text": "Fine, I'll get them for you.",
+                    "link": "finally"
+                },
+                {
+                    "text": "Still a no",
+                    "link": "24"
+                }
+            ]
+        },
+        "24": {
+            "text": "Hmph! You're as stubborn as a rock and almost as smart. Everyone at the Day of the Great Soup will hear of your folly, mark my word.",
+            "set": {
+                "id": "refused_2_Rat",
+                "value": "true"
+            }
+        },
+        "25": {
+            "text": "Oh, you're back. Now will you get me my mushrooms?",
+            "links": [
+                {
+                    "text": "Yeah, I will [i]now[/i]",
+                    "link": "26"
+                },
+                {
+                    "text": "No",
+                    "link": "25b"
+                }
+            ]
+        },
+        "25b": {
+            "text": "You inconsiderate little squirrel. You'll regret this."
+        },
+        "26": {
+            "text": "Finally! I suppose I should thank you, but frankly I'm quite frustrated with you right now. Maybe later I will.",
+            "next": "27"
+        },
+        "27": {
+            "text": "Anyway, you'll need this key to unlock the gate that blocks the way to the mushrooms.",
+            "next": "28"
+        },
+        "28": {
+            "text": "There's also an unpleasant slimey monster blocking the way to the mushrooms...",
+            "execute": "give_key",
+            "next": "29"
+        },
+        "29": {
+            "text": "Do you have any weapons to fight it with?",
+            "links": [
+                {
+                    "text": "Yes",
+                    "link": "010"
+                },
+                {
+                    "text": "No",
+                    "link": "09b"
+                }
+            ]
+        },
+        "20a": {
+            "text": "Oh good... I knew you were a charitable soul deep down.",
+            "next": "04"
+        },
+        "03": {
+			"text": "Lovely, thank you so much!",
+            "links": [
+                {
+                    "text": "My pleasure",
+                    "link": "thanks"
+                },
+                {
+                    "text": "What do you need me to do?",
+                    "link": "04"
+                }
+            ]
+		},
+        "thanks": {
+            "text": "Again, many thanks... But let me explain.",
+            "next": "04"
+        },
+        "04": {
+            "text": "You see, I am a chef of wide reknown, and tomorrow is the Day of the Great Soup!",
+            "next": "05"
+        },
+        "05": {
+            "text": "I have been chosen to prepare the Ripplespore mushrooms needed for the Soup, and this dungeon is the perfect spot to find them",
+            "next": "06"
+        },
+        "06": {
+            "text": "Unfortunately, the place they grow is guarded by a particularily unpleasant Caenumid beast, and, being the poor, humble rat that I am, I lack the ability to fend him off. But perhaps you could?",
+            "links": [
+                {
+                    "text": "Sorry, you're on your own",
+                    "link": "10"
+                },
+                {
+                    "text": "I'll kill it for you!",
+                    "link": "08"
+                },
+                {
+                    "text": "What's a Caenumid?",
+                    "link": "07"
+                }
+            ]
+        },
+        "10": {
+            "text": "That's a shame.. At least I know I'm not the only coward in this dungeon!",
+            "links": [
+                {
+                    "text": "Okay, bye.",
+                    "link": "11"
+                },
+                {
+                    "text": "Hey! Okay, I'll fight it",
+                    "link": "08"
+                }
+            ]
+        },
+        "11": {
+            "text": "Hmph! Farewell, I guess.",
+            "set": {
+                "id": "refused_1_Rat",
+                "value": "true"
+            }
+        },
+        "12": {
+            "text": "Oh, you're back. Now will you get me my mushrooms?",
+            "links": [
+                {
+                    "text": "Yes",
+                    "link": "08"
+                },
+                {
+                    "text": "No",
+                    "link": "13"
+                }
+            ]
+        },
+        "13": {
+            "text": "What a pity. See you around."
+        },
+        "07": {
+            "text": "Oh! It's a nasty, slimey, shapeless thing with a fearsome temper. Not my cup of tea. Will you fight him for me?",
+            "links": [
+                {
+                    "text": "Yes!",
+                    "link": "08"
+                },
+                {
+                    "text": "No thanks..",
+                    "link": "10"
+                }
+            ]
+        },
+        "08": {
+            "text": "Perfect! Here's the key to the gate that blocks the way.",
+            "execute": "give_key",
+            "next": "09"
+        },
+        "09": {
+            "text": "Do you have any weapons to fight the monster with?",
+            "links": [
+                {
+                    "text": "Yes",
+                    "link": "010"
+                },
+                {
+                    "text": "No",
+                    "link": "09b"
+                }
+            ]
+        },
+        "09b": {
+            "text": "Oh well... I think I saw an old rusty dagger nearer to the entrance of the dungeon, maybe you should go find that.",
+            "set": {
+                "id": "find_weapon_Rat",
+                "value": "true"
+            }
+        },
+        "010": {
+            "text": "Perfect!",
+            "set": {
+                "id": "go_on_Rat",
+                "value": "true"
+            }
+        },
+        "go_on": {
+            "text": "Go on, then! The Soup's awaiting me!"
+        }
+    },
+    "conditions": {
+        "refused_1": [
+            {
+                "type": "var",
+                "id": "refused_1_Rat",
+                "value": "true"
+            }
+        ],
+        "refused_2": [
+            {
+                "type": "var",
+                "id": "refused_2_Rat",
+                "value": "true"
+            }
+        ],
+        "talked": [
+            {
+                "type": "var",
+                "id": "talked_Rat",
+                "value": "true"
+            }
+        ],
+        "go_on": [
+            {
+                "type": "var",
+                "id": "go_on_Rat",
+                "value": "true"
+            }
+        ],
+        "find_weapon": [
+            {
+                "type": "var",
+                "id": "find_weapon_Rat",
+                "value": "true"
+            }
+        ]
+    },
+    "comment": {
+        "type": "item",
+        "id": "lighter",
+        "count": 1
+    }
+}

@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/Items/GroundItem.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 32.0
+radius = 37.4833
 
 [node name="GroundItem" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -13,8 +13,8 @@ item = null
 [node name="Sprite" type="Sprite" parent="." index="0"]
 scale = Vector2( 0.5, 0.5 )
 
-[node name="CollisionShape2D" parent="." index="1"]
-shape = SubResource( 1 )
-
-[node name="InteractionIndicator" parent="." index="2"]
+[node name="InteractionIndicator" parent="." index="1"]
 position = Vector2( 0, -50 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+shape = SubResource( 1 )
